@@ -1,0 +1,57 @@
+import express from "express"
+import cors from "cors"
+import mongoose from "mongoose"
+
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded())
+app.use(cors())
+
+// mongoose.connect("localhost://27017/avdb" , {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }, () => {
+//     console.log("DB Connected")
+// })
+
+
+async function connectToDatabase() {
+  try {
+    await mongoose.connect('mongodb://localhost:27017/your-database-name', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+  }
+}
+
+connectToDatabase();
+
+//Routes
+app.get("/", (req,res) => {
+    res.send("My API")
+})
+// const uri = 'mongodb://127.0.0.1:27017/AvLogin';
+
+// mongoose.connect(uri, {
+//   serverSelectionTimeoutMS: 5000
+// }).catch(err => console.log(err.reason));
+
+app.listen(9000,() => {
+    console.log("BE started at port")
+})
+
+// const mongoose = require("mongoose");
+
+
+// mongoose.connect("mongodb://127.0.0.1:27017/SignUp", {
+//     useNewUrlParser:true ,
+//     useUnifiedTopology:true
+// }).then(() => {
+//     console.log(`Connection Successful`);
+
+// }).catch((e) =>{
+//     console.log(`No Connection.`)
+// })
