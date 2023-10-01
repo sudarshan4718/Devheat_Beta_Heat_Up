@@ -31,7 +31,7 @@ connectToDatabase();
 
 //Routes
 app.get("/", (req,res) => {
-    res.send("My API")
+    res.send("My API");
 })
 // const uri = 'mongodb://127.0.0.1:27017/AvLogin';
 
