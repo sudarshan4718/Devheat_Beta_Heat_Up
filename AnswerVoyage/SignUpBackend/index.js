@@ -29,10 +29,29 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-//Routes
-app.get("/", (req,res) => {
-    res.send("My API");
+const userSchema = new mongoose.Schema({
+  name : String,
+  email : String,
+  password : String
 })
+
+const User = new mongoose.model("User", userSchema)
+
+
+
+//Routes
+app.post("/login", (req,res) => {
+    res.send("My API login");
+})
+
+app.post("/register", (req,res) => {
+  res.send("My API register");
+})
+
+app.get("/", (req,res) => {
+  res.send("My API");
+})
+
 // const uri = 'mongodb://127.0.0.1:27017/AvLogin';
 
 // mongoose.connect(uri, {
@@ -55,3 +74,4 @@ app.listen(9000,() => {
 // }).catch((e) =>{
 //     console.log(`No Connection.`)
 // })
+
