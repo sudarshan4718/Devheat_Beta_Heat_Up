@@ -48,9 +48,9 @@ app.post("/register", (req,res) => {
   res.send("My API register");
 })
 
-app.get("/", (req,res) => {
-  res.send("My API");
-})
+// app.get("/", (req,res) => {
+//   res.send("My API");
+// })
 
 // const uri = 'mongodb://127.0.0.1:27017/AvLogin';
 

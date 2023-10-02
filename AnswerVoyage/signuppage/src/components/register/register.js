@@ -23,7 +23,7 @@ const Register = () => {
         const {name, email, password, reEnterPassword } = user
         if(name && email && password && (password === reEnterPassword)){
             alert("posted")
-       // axios.post("http://local host:9000/register" , user)
+       axios.post("http://local host:9000/register" , user)
         }else{
             alert("Invalid Input.")
         }
