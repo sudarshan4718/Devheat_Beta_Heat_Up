@@ -41,11 +41,42 @@ const User = new mongoose.model("User", userSchema)
 
 //Routes
 app.post("/login", (req,res) => {
-    res.send("My API login");
+  const {email, password} =req.body
+  User.findOne({email : email}, (err,user) => {
+    if(user){
+      if(password == user.password) {
+        res.send({message: "Login Successfull", user: user})
+      }
+      else{
+        res.send({message:"Pssword incorrect"})
+      }
+    }
+    else{
+      res.send("User not registered")
+    }
+  })
 })
 
-app.post("/register", (req,res) => {
-  res.send("My API register");
+app.post("/register", (req,res) => {            
+   const {name, email, password} =req.body
+   User.findOne({email: email},(err,user) => {         // If email exists then
+      if(user){
+        res.send({message : "User already registered"})
+      }
+   })
+   const user = new User({
+    name,
+    email,
+    password
+   })
+   user.save( err => {                  // Saving the users info in database
+    if(err) {
+      res.send(err)
+    }
+    else {
+      res.send({message: "Successfully Registered"})
+    }
+   })
 })
 
 // app.get("/", (req,res) => {
@@ -59,7 +90,7 @@ app.post("/register", (req,res) => {
 // }).catch(err => console.log(err.reason));
 
 app.listen(9000,() => {
-    console.log("BE started at port")
+    console.log("BE started at port 9000")
 })
 
 // const mongoose = require("mongoose");
