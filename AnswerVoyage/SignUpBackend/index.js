@@ -44,11 +44,11 @@ app.post("/login", (req,res) => {
   const {email, password} =req.body
   User.findOne({email : email}, (err,user) => {
     if(user){
-      if(password == user.password) {
+      if(password === user.password) {
         res.send({message: "Login Successfull", user: user})
       }
       else{
-        res.send({message:"Pssword incorrect"})
+        res.send({message:"Password incorrect"})
       }
     }
     else{
@@ -63,20 +63,23 @@ app.post("/register", (req,res) => {
       if(user){
         res.send({message : "User already registered"})
       }
+      else {
+        const user = new User({
+          name,
+          email,
+          password
+         })
+         user.save( err => {                  // Saving the users info in database
+          if(err) {
+            res.send(err)
+          }
+          else {
+            res.send({message: "Successfully Registered"})
+          }
+         })
+      }
    })
-   const user = new User({
-    name,
-    email,
-    password
-   })
-   user.save( err => {                  // Saving the users info in database
-    if(err) {
-      res.send(err)
-    }
-    else {
-      res.send({message: "Successfully Registered"})
-    }
-   })
+   
 })
 
 // app.get("/", (req,res) => {
