@@ -17,7 +17,7 @@ app.use(cors())
 
 async function connectToDatabase() {
   try {
-    await mongoose.connect('mongodb://localhost:27017/your-database-name', {
+    await mongoose.connect('mongodb://localhost:27017/AvRegister', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
