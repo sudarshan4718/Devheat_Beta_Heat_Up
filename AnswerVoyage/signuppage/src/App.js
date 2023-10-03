@@ -1,35 +1,22 @@
-
 import './App.css';
-import Homepage from "./components/homepage/homepage"
 import Login from "./components/login/login"
 import Register from "./components/register/register"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Homepage from "./components/homepage/homepage" // Import Homepage
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from 'react';
 
-// useHistory is used to switch from one route to another by giving access to history
 function App() {
-
-  const [ user, setLoginUser] = useState({})
+  const [user, setLoginUser] = useState({});
 
   return (
     <div className="App">
-    <Router>
-<Switch>
-  <Route exact path='/'>
-
-  {
-  user && user._id ? <Homepage setLoginUser={setLoginUser} />: <Login setLoginUser={setLoginUser}/>
-            }
-
-  </Route>
-  <Route path='/login'>
-    <Login setLoginUser={setLoginUser}/>
-  </Route>
-  <Route path='/register'>
-    <Register/>
-  </Route>
-</Switch>
- </Router>
+      <Router>
+        <Routes>
+          <Route path='/login' element={user && user._id ? <Navigate to='/' /> : <Login setLoginUser={setLoginUser} />} />
+          <Route path='/register' element={user && user._id ? <Navigate to='/' /> : <Register />} />
+          <Route path='/' element={user && user._id ? <Homepage setLoginUser={setLoginUser} /> : <Login setLoginUser={setLoginUser} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
