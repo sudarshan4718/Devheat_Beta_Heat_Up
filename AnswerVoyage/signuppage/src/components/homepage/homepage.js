@@ -8,7 +8,7 @@ const Homepage = ({setLoginUser}) => {
       <header>
         <h1>
           AnswerVoyage &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <img src="websitelogo.png" alt="Site Logo" width="100" height="80" />
+          <img src="websitelogo.png"/>
         </h1>
       </header>
       <nav>
@@ -65,7 +65,7 @@ const Homepage = ({setLoginUser}) => {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
-      <i onClick={myFunction} className="fa fa-thumbs-up"></i>
+      <i  className="fa fa-thumbs-up"></i>
       <br />
       <br />
       {/* Repeat the story content and upvote button as needed */}
@@ -91,4 +91,4 @@ const Homepage = ({setLoginUser}) => {
     )
 }
 
-export default Homepage
+export default Homepage;
