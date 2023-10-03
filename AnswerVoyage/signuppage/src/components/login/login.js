@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import "./login.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 
 const Login = ({ setLoginUser}) => {
 
-    const navigate = useHistory() ;
+    const history = useNavigate() ;
 
     const [ user, setUser] = useState({
         email:"",
@@ -26,7 +27,7 @@ const Login = ({ setLoginUser}) => {
         .then(res => {
             alert(res.data.message)
             setLoginUser(res.data.user)
-            navigate("/")
+            history("/")
         })
      }
 
@@ -38,7 +39,7 @@ const Login = ({ setLoginUser}) => {
             <input type="password" name="password" value={user.password} placeholder="Enter your password" onChange={ handleChange }></input>
             <div className="button" onClick={login}>Login</div>
             <div>OR</div>
-            <div className="button" onClick={() => navigate("/register") }>Register</div>   
+            <div className="button" onClick={() => history("/register") }>Register</div>   
             {/* push back to register   */}
         </div>
     )
