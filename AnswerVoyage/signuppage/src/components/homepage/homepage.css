@@ -1,99 +1,109 @@
-/* App.css */
-
+/* Homepage.module.css */
 .homepage {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f0ea;
-  }
+  font-family: Arial, sans-serif;
   
-  .homepage > header {
-    background-color: hsl(188, 49%, 54%);
-    text-align: center;
-    color: #fff;
-    padding: 0px;
-  }
-  
-  .homepage > h1 {
-    margin: 0;
-    text-align: center;
-  }
-  
-  .homepage > h3 {
-    margin: 0;
-    color: blue;
-  }
-  
-  .homepage > nav {
-    background-color: rgb(235, 192, 113);
-    color: #fff;
-    padding: 10px;
-  }
-  
-  .homepage > nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .homepage > nav ul li {
-    display: inline;
-    margin-right: 10px;
-  }
-  
-  .homepage > nav ul li a {
-    color: black;
-    text-decoration: solid;
-    padding: 5px;
-  }
-  
-  .homepage > #xyz {
-    color: black;
-  }
-  
-  .homepage > .submitbutton input[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    padding: 2px;
-    cursor: pointer;
-  }
-  
-  .homepage > .submitbutton input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  .homepage > .row {
-    background-color: #febc40;
-    color: red;
-  }
-  
-  .homepage > .address1 {
-    font-size: small;
-    background-color: white;
-  }
-  
-  /* Create two equal columns that float next to each other */
-  .homepage > .column {
-    float: left;
-    width: 100%;
-    padding: 10px;
-  }
-  
-  /* Clear floats after the columns */
-  .homepage > .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  .homepage > .fa {
-    font-size: 50px;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .homepage > .fa:hover {
-    color: darkblue;
-  }
-  
+  margin: 0;
+  padding: 0;
+  background-color: #f2f0ea;
+  height: 100vh; /* Use the full viewport height */
+  overflow: hidden; /* Prevent vertical scrollbar */
+  position: relative; /* Position for logo */
+}
+
+.homepage header {
+  background-color: hsl(188, 49%, 54%);
+  text-align: center;
+  color: #fff;
+  padding: 20px 0; /* Add padding top and bottom */
+}
+
+.homepage h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 24px; /* Increase font size */
+}
+
+.homepage h3 {
+  margin: 0;
+  color: blue;
+}
+
+.homepage nav {
+  background-color: rgb(235, 192, 113);
+  color: #fff;
+  padding: 10px;
+}
+
+.homepage nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.homepage nav ul li a {
+  color: black;
+  text-decoration: solid;
+  padding: 5px;
+}
+
+.homepage #xyz {
+  color: black;
+}
+
+.homepage .submitbutton input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px; /* Increase padding */
+  cursor: pointer;
+}
+
+.homepage .submitbutton input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.homepage .row {
+  background-color: #febc40;
+  color: red;
+}
+
+.homepage .address1 {
+  font-size: small;
+  background-color: white;
+}
+
+.homepage .column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+}
+
+.homepage .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.homepage .fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.homepage .fa:hover {
+  color: darkblue;
+}
+
+/* Logo styling */
+.homepage img {
+  width: 100px; /* Adjust the logo width */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute; /* Position the logo */
+  top: 20px; /* Adjust top position */
+  left: 20px; /* Adjust left position */
+}
