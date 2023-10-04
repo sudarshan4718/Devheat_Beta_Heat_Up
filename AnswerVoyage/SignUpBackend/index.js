@@ -24,15 +24,34 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
+// Define a schema for questions
+const questionSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User", // Reference to the User model
+  },
+  questionText: String,
+});
+
+// Create a model for questions
+const Question = mongoose.model("Question", questionSchema);
+
+// Define the user schema
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
+  questions: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Question", // Reference to the Question model
+  }],
 });
 
+// Create a model for users
 const User = mongoose.model("User", userSchema);
 
 app.post("/login", async (req, res) => {
+  // ... your existing login route
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email });
@@ -53,6 +72,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
+  // ... your existing registration route
   try {
     const { name, email, password } = req.body;
     const existingUser = await User.findOne({ email: email });
@@ -69,6 +89,30 @@ app.post("/register", async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 });
+
+// New endpoint for posting questions
+app.post("/PostQuestion", async (req, res) => {
+  try {
+    const { userId, questionText } = req.body;
+
+    // Create a new question document
+    const newQuestion = new Question({
+      questionText,
+    });
+
+    // Save the question to the database
+    await newQuestion.save();
+
+    // Update the user's questions array with the new question
+    // await User.findByIdAndUpdate(userId, { $push: { questions: newQuestion._id } });
+
+    res.json({ message: 'Question posted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
