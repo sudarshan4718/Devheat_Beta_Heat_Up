@@ -1,4 +1,4 @@
-/* Homepage.module.css */
+
 .homepage {
   font-family: Arial, sans-serif;
   
@@ -28,28 +28,60 @@
   color: blue;
 }
 
-.homepage nav {
-  background-color: rgb(235, 192, 113);
-  color: #fff;
-  padding: 10px;
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.homepage nav ul {
-  list-style-type: none;
+.navbar-brand {
+  font-size: 24px;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
 
-.homepage nav ul li {
-  display: inline;
-  margin-right: 10px;
+.navbar-list li {
+  margin-right: 20px;
 }
 
-.homepage nav ul li a {
-  color: black;
-  text-decoration: solid;
-  padding: 5px;
+.navbar-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
+
+.navbar-list a:hover {
+  color: #007bff;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-list {
+    margin-top: 10px;
+  }
+
+  .navbar-list li {
+    margin: 5px 0;
+  }
+}
+
 
 .homepage #xyz {
   color: black;
