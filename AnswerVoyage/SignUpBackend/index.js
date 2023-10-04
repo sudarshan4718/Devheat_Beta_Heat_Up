@@ -24,7 +24,7 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-// Define a schema for questions
+
 const questionSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -33,7 +33,7 @@ const questionSchema = new mongoose.Schema({
   questionText: String,
 });
 
-// Create a model for questions
+
 const Question = mongoose.model("Question", questionSchema);
 
 // Define the user schema
@@ -43,11 +43,11 @@ const userSchema = new mongoose.Schema({
   password: String,
   questions: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Question", // Reference to the Question model
+    ref: "Question", 
   }],
 });
 
-// Create a model for users
+// Model for users
 const User = mongoose.model("User", userSchema);
 
 app.post("/login", async (req, res) => {
@@ -72,7 +72,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  // ... your existing registration route
+  
   try {
     const { name, email, password } = req.body;
     const existingUser = await User.findOne({ email: email });
@@ -90,7 +90,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// New endpoint for posting questions
+
 app.post("/PostQuestion", async (req, res) => {
   try {
     const { userId, questionText } = req.body;
@@ -100,11 +100,8 @@ app.post("/PostQuestion", async (req, res) => {
       questionText,
     });
 
-    // Save the question to the database
+    
     await newQuestion.save();
-
-    // Update the user's questions array with the new question
-    // await User.findByIdAndUpdate(userId, { $push: { questions: newQuestion._id } });
 
     res.json({ message: 'Question posted successfully' });
   } catch (error) {
