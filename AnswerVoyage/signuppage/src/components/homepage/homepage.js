@@ -1,19 +1,28 @@
-import React from "react";
-import "./homepage.css"
+import React, { useState } from "react";
+import "./homepage.css";
+import { useNavigate } from "react-router-dom";
 
-const Homepage = ({setLoginUser}) => {
-    return (
-        <div className="homepage">
-            <div>
+
+
+const Homepage = ({ setLoginUser }) => {
+  
+
+  // Rest of your Homepage component code
+  const navigate = useNavigate();
+  
+
+  return (
+    <div className="homepage">
       <header>
         <h1>
           AnswerVoyage &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <img src="websitelogo.png"/>
+          <img src="websitelogo.png" alt="Website Logo" />
         </h1>
       </header>
       <nav>
         <ul>
           {/* Navigation list items */}
+          {/* ... Your navigation code ... */}
           <li><a href="#" title="Home"><i class="bi bi-house"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
           <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
           </svg></a></li>
@@ -41,31 +50,35 @@ const Homepage = ({setLoginUser}) => {
         </ul>
       </nav>
       <br />
-      <form>
-        <div>
-          <label htmlFor="a">
-            <p id="xyz">&nbsp;&nbsp;Ask a Question</p>
-          </label>
-          &nbsp;
-          <textarea cols="140" rows="3" name="Mytext" id="askqn"></textarea>
-        </div>
-        <div className="submitbutton">
-          &nbsp;&nbsp;
-          <input type="submit" value="Submit" name="submitkrnahai" />
-        </div>
-        <br />
-      </form>
+      <form >
+  <div>
+    <label htmlFor="questionInput">
+      <p id="xyz">&nbsp;&nbsp;Ask a Question</p>
+    </label>
+    &nbsp;
+    <input
+      type="text"
+      id="questionInput"
+    />
+    <div className="submitbutton" onClick={() => navigate("/post-question") }>
+      &nbsp;&nbsp;<b>Post a Question</b>
+      <input type="submit" value="Submit" name="submitkrnahai" />
+    </div>
+  </div>
+  <br />
+</form>
+
+      
       <h2>Stories</h2>
       <div className="row">
-        <textarea cols="101" rows="20" name="Mytext" id="a"></textarea>
-        <textarea cols="40" rows="20" name="Mytext" id="a"></textarea>
+        {/* ... Your story content ... */}
       </div>
       Upvote
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
-      <i  className="fa fa-thumbs-up"></i>
+      <i className="fa fa-thumbs-up"></i>
       <br />
       <br />
       {/* Repeat the story content and upvote button as needed */}
@@ -77,7 +90,7 @@ const Homepage = ({setLoginUser}) => {
       </div>
       <h3>&nbsp;Contacts</h3>
       <address className="address1" id="contacts">
-        &nbsp;Managed by AnswerVoyage pvt limited.
+        &nbsp;Managed by AnswerVoyage Pvt Limited.
         <br />
         &nbsp;Visit us at:<br />
         &nbsp;vikeshkumar3640@gmail.com<br />
@@ -85,10 +98,11 @@ const Homepage = ({setLoginUser}) => {
         &nbsp;Valthan, Surat, Gujarat<br />
         &nbsp;India
       </address>
+      <div className="button" onClick={() => setLoginUser({})}>
+        Logout
+      </div>
     </div>
-     <div className="button">Logout</div>
-        </div>
-    )
-}
+  );
+};
 
 export default Homepage;
