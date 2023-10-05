@@ -37,7 +37,7 @@ npm create-react-app my-app
 
 💿 Install all dependencies:
 <br><br>
-![](AnswerVoyage/signuppage/pro3.png)<br
+![](AnswerVoyage/signuppage/pro3.png)<br>
 
 ```sh
 npm install
@@ -63,6 +63,7 @@ React App runs on the browser with localhost 3000.
 ```sh
 http://localhost:3000/
 ```
+# In this Repo, SignUpBackend have backend codes and signuppage have frontend codes.
 
 # Frontend
 
@@ -70,11 +71,20 @@ http://localhost:3000/
  We have used Hooks like useEffect and useReact in this React App.
  We have used router-dom to create routes and path.
  - CSS<br>
- ![].(AnswerVoyage/signuppage/pro.png)<br><br>
- ![].(AnswerVoyage/signuppage/pro4.png)<br>
- - We have made Register, Login page at first. <br><br>
- ![]<br>
- - User can edit his/her profile
+ - We have made Register, Login page at first. <br>
+![](AnswerVoyage/signuppage/pro.png)<br><br>
+ ![](AnswerVoyage/signuppage/pro4.png)
+ <br>
+   We Added Navigation bar. In which, We have provided contacts, Sign in, Questions, Logout Features.<br>
+  ![](AnswerVoyage/signuppage/pro5.png)<br>
+-This is our Contacts Page
+<br><br>
+![](AnswerVoyage/signuppage/pro5.png)<br>
+This is our Question Display Page.<br><br>
+![](AnswerVoyage/signuppage/pro6.png)<br>
+This is our Ask Questions page. In which you can ask your Questions.
+
+   
 
   
 # Backend
@@ -88,6 +98,7 @@ This App Uses Some Node_Modules in order to work properly which include:
 - `Express`
   - create a web-server
   - handles request and response
+  - To connect Backend and Frontend.
 
 # Database
 
@@ -102,5 +113,6 @@ We are using `MongoDB` for all its database needs. This App uses DB to:
 
 There are some features that can be added in the future:
 - We can add Dashboard for the users, in which, No.of Questions Asked by the user will be displayed, and how many questions are answered till then.
+- We can link the USername, Questions, and Answers and show it in our Page.
 - We can add Comment Features for the Answers Uploaded.
 - Users can add their Profile Picture and Bio.
