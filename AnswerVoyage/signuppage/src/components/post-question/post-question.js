@@ -14,58 +14,29 @@ function PostQuestion() {
  const handleQuestionSubmit = async (e) => {
   e.preventDefault();
   console.log("Form Submitted");
+  
   try {
-    const response = await fetch("http://localhost:9000/post-question", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ questionText }),
+    const response = await axios.post("http://localhost:9000/PostQuestion", {
+      text: questionText,
     });
-
-    const data = await response.json();
-    console.log("Server Response:", response);
-    console.log("Server Data:", data);
-
-    if (response.ok) {
-      setMessage("Question posted successfully");
-      setQuestionText(""); // Clear the input field
+  
+    if (response.status === 201) {
+      // Question posted successfully
+      console.log('Question Text:', questionText);
+      console.log('Question posted:', response.data);
+      console.log('handleQuestionSubmit function executed');
+      // Clear the question text
+      setQuestionText('');
     } else {
-      setMessage("Failed to post question");
+      console.error('Failed to post question:', response.data);
+      console.log('handleQuestionSubmit function executed');
     }
   } catch (error) {
-    console.error("Error posting question:", error);
+
+    console.error('Error posting question:', error);
   }
-};
+}
 
-  const handlePostQuestion = async () => {
-    try {
-      if (!questionText.trim()) {
-        // Check if the question text is empty or only contains whitespace
-        return;
-      }
-
-      // Send a POST request to your server to post the question
-      const response = await axios.post("http://localhost:9000/post-question", {
-        text: questionText,
-      });
-
-      // Check the response and handle it accordingly
-      if (response.status === 201) {
-        // Question posted successfully
-        console.log('Question posted:', response.data);
-
-        // Clear the question text
-        setQuestionText('');
-      } else {
-        // Handle error responses from the server
-        console.error('Failed to post question:', response.data);
-      }
-    } catch (error) {
-      // Handle any network or other errors
-      console.error('Error posting question:', error);
-    }
-  };
 
   return (
     <div className="post-question">
@@ -76,10 +47,9 @@ function PostQuestion() {
         placeholder="Type your question here..."
         rows="4"
       ></textarea>
-      <button onClick={handlePostQuestion}>Post</button>
+      <button onClick={handleQuestionSubmit}>Post</button>
     </div>
   );
 }
 
 export default PostQuestion;
-
