@@ -5,6 +5,7 @@ import PostQuestion from "./components/post-question/post-question"; // Import P
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 import Contacts from "./components/Contacts/Contacts";
+import Questions from "./components/Questions/Questions";
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
           <Route path="/login" element={user && user._id ? <Navigate to="/" /> : <Login setLoginUser={setLoginUser} />} />
           <Route path="/register" element={user && user._id ? <Navigate to="/" /> : <Register />} />
                                    
-          
+          {/* Route for posting questions */}
           <Route path="/post-question" element={<PostQuestion />} />
 
           <Route
@@ -26,6 +27,7 @@ function App() {
           />
           <Route path="/homepage" element={<Homepage/>}/>
           <Route path="/Contacts" element={<Contacts/>}/>
+          <Route path="/Questions" element={<Questions/>}/>
         </Routes>
       </Router>
     </div>
