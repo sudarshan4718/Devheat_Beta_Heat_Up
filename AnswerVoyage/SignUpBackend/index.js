@@ -24,7 +24,7 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-
+// Define a schema for questions
 const questionSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -33,7 +33,7 @@ const questionSchema = new mongoose.Schema({
   questionText: String,
 });
 
-
+// Create a model for questions
 const Question = mongoose.model("Question", questionSchema);
 
 // Define the user schema
@@ -43,11 +43,11 @@ const userSchema = new mongoose.Schema({
   password: String,
   questions: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Question", 
+    ref: "Question", // Reference to the Question model
   }],
 });
 
-// Model for users
+// Create a model for users
 const User = mongoose.model("User", userSchema);
 
 app.post("/login", async (req, res) => {
@@ -72,7 +72,6 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  
   try {
     const { name, email, password } = req.body;
     const existingUser = await User.findOne({ email: email });
@@ -90,24 +89,26 @@ app.post("/register", async (req, res) => {
   }
 });
 
-
 app.post("/PostQuestion", async (req, res) => {
   try {
-    const { userId, questionText } = req.body;
-
-    // Create a new question document
-    const newQuestion = new Question({
-      questionText,
-    });
+    const { text } = req.body;
 
     
+    const newQuestion = new Question({
+      questionText : text,
+    });
+
+    // Save the question to the database
     await newQuestion.save();
 
-    res.json({ message: 'Question posted successfully' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server Error' });
-  }
+    // Update the user's questions array with the new question
+    //  await User.findByIdAndUpdate(User, { $push: { questions: newQuestion._id } });
+
+     res.status(201).json({ message: 'Question posted successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server Error' });
+    }
 });
 
 
