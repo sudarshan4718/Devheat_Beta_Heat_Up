@@ -38,7 +38,13 @@ const Register = () => {
   };
 
   return (
+    <div>
+      <header>
+        <h1 className="header1">AnswerVoyage
+        </h1>
+    </header>
     <div className="parent-container">
+      
     <div className="register" >
       {console.log("User", user)}
       <h1>Register</h1>
@@ -77,6 +83,7 @@ const Register = () => {
       <div className="button" onClick={() => navigate("/login")}>
         Login
       </div>
+    </div>
     </div>
     </div>
   );
