@@ -1,1 +1,63 @@
+.heading-container {
+    background: linear-gradient(135deg, #3498db, #e74c3c);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+  }
+  
+  .heading1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #faa44f;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  /* Hover effect */
+  .heading1:hover {
+    color: #2ecc71;
+    transform: scale(1.05);
+  }
+  
+  /* Style for unordered list */
+ol {
+    list-style-type: decimal; 
+    padding-left: 20px; 
+  }
+  
+  /* Style for list items */
+  li {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333; /* Default text color */
+    transition: color 0.3s; /* Smooth color transition on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  /* Hover effect */
+  li:hover {
+    color: #2782cd; /* Change text color on hover */
+  }
 
+  textarea{
+    width: 1000px;
+    height: 35px;
+  }
+  
+  body{
+    background-color:#eff572;
+  }
+
+  .header1{
+    background-color: #3498db;
+    text-align: center;
+  }
+
+  
