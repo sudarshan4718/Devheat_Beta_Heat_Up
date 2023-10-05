@@ -59,13 +59,19 @@ Backend runs on the browser with localhost 9000.
 http://localhost:9000/
 ```
 
+React App runs on the browser with localhost 3000.
+```sh
+http://localhost:3000/
+```
 
 # Frontend
 
  - React-Js<br>
+ We have used Hooks like useEffect and useReact in this React App.
+ We have used router-dom to create routes and path.
  - CSS<br>
- ![]<br><br>
- ![]<br>
+ ![].(AnswerVoyage/signuppage/pro.png)<br><br>
+ ![].(AnswerVoyage/signuppage/pro4.png)<br>
  - We have made Register, Login page at first. <br><br>
  ![]<br>
  - User can edit his/her profile
