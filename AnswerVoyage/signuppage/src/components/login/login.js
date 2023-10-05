@@ -32,6 +32,7 @@ const Login = ({ setLoginUser}) => {
      }
 
     return (
+        <div className="parent-container">
         <div className="login">
             <h1>Login</h1>
             {console.log("User", user)}
@@ -41,6 +42,7 @@ const Login = ({ setLoginUser}) => {
             <div>OR</div>
             <div className="button" onClick={() => history("/register") }>Register</div>   
             {/* push back to register   */}
+        </div>
         </div>
     )
 }
