@@ -38,6 +38,7 @@ const Register = () => {
   };
 
   return (
+    <div className="parent-container">
     <div className="register" >
       {console.log("User", user)}
       <h1>Register</h1>
@@ -76,6 +77,7 @@ const Register = () => {
       <div className="button" onClick={() => navigate("/login")}>
         Login
       </div>
+    </div>
     </div>
   );
 };
