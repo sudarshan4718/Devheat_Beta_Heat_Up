@@ -5,22 +5,22 @@
   margin: 0;
   padding: 0;
   background-color: #f2f0ea;
-  height: 100vh; /* Use the full viewport height */
-  overflow: hidden; /* Prevent vertical scrollbar */
-  position: relative; /* Position for logo */
+  height: 100vh; 
+  overflow: hidden; 
+  position: relative; 
 }
 
 .homepage header {
   background-color: hsl(188, 49%, 54%);
   text-align: center;
   color: #fff;
-  padding: 20px 0; /* Add padding top and bottom */
+  padding: 20px 0; 
 }
 
 .homepage h1 {
   margin: 0;
   text-align: center;
-  font-size: 24px; /* Increase font size */
+  font-size: 24px; 
 }
 
 .homepage h3 {
