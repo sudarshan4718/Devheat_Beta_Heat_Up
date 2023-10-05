@@ -24,12 +24,11 @@ Our website is dedicated to fostering a supportive community where people come t
 ```sh
 git clone https://github.com/sudarshan4718/Devheat_Beta_Heat_Up.git
 ```
-Create a password.js file in the backend folder<br><br>
+First Register to the Website by entering your details.<br><br>
 ![](frontend/images/demo4.jpeg)<br>
-- email -> Enter the email id from which the verification mail would be sent
-- pass -> Generate app password for the above-entered email id
-- jwtprivatekey -> any string
-- uri -> your database uri
+- email -> Provide a valid Email id
+- password -> Provide a Password
+  
 
 💿 Install all dependencies:
 
