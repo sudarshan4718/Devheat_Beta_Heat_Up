@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 const Homepage = ({ setLoginUser }) => {
   
 
-  // Rest of your Homepage component code
   const navigate = useNavigate();
   
 
