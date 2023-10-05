@@ -1,11 +1,28 @@
 
 .parent-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
   }
-  
+  .heading1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #faa44f;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .header1{
+    background-color: #3498db;
+    text-align: center;
+  }
+
 .register {
     
     width: 400px;
