@@ -24,13 +24,20 @@ Our website is dedicated to fostering a supportive community where people come t
 ```sh
 git clone https://github.com/sudarshan4718/Devheat_Beta_Heat_Up.git
 ```
-First Register to the Website by entering your details.<br><br>
-![](frontend/images/demo4.jpeg)<br>
-- email -> Provide a valid Email id
-- password -> Provide a Password
+
+We need to install React in our folder.
+npm create-react-app my-app
+
+
+<br><br>
+![](frontend/images/demo4.jpeg)<br
+
+
   
 
 💿 Install all dependencies:
+<br><br>
+![](frontend/images/demo4.jpeg)<br
 
 ```sh
 npm install
@@ -39,11 +46,11 @@ npm install
 🚴‍♂️ Run your App:
 
 ```sh
-cd SignUpBackend
+cd AnswerVoyage/SignUpBackend
 node index.js
 
-or
-
+And
+cd AnswerVoyage/signuppage
 npm start
 
 ```
