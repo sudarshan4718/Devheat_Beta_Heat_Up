@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import "./login.css";
 import axios from "axios";
-// import { useHistory } from "react-router-dom";
 import {  useNavigate } from "react-router-dom";
 
 
@@ -32,6 +31,11 @@ const Login = ({ setLoginUser}) => {
      }
 
     return (
+        <div>
+      <header>
+        <h1 className="header1">AnswerVoyage
+        </h1>
+    </header>
         <div className="parent-container">
         <div className="login">
             <h1>Login</h1>
@@ -42,6 +46,7 @@ const Login = ({ setLoginUser}) => {
             <div>OR</div>
             <div className="button" onClick={() => history("/register") }>Register</div>   
             {/* push back to register   */}
+        </div>
         </div>
         </div>
     )
