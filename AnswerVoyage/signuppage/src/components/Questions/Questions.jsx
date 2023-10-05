@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import "./Questions.css";
 
 
  const Questions =() =>{
@@ -20,12 +20,18 @@ import axios from "axios";
 
     return (
         <>
-        <div>
-         <h1> See Questions Asked Here</h1>
-         <ul> {data.map((item)=>(
-            <li key={item._id}>{item.questionText}</li>
+        <header>
+        <h1 className="header1">AnswerVoyage
+        </h1>
+    </header>
+        <div className="heading container">
+         <h1 className="heading1"> See Questions Asked Here</h1>
+         <br/>
+         <br/>
+         <ol> {data.map((item)=>(
+           <li> <textarea key={item._id}>{item.questionText}</textarea></li>
          ))
-            } </ul>
+            } </ol>
         </div>
       </>
        );
@@ -34,4 +40,3 @@ import axios from "axios";
  };
 
 export default Questions;
-
