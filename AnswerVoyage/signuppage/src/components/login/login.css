@@ -4,10 +4,30 @@
     align-items: center; 
     min-height: 100vh; 
   }
+
+  .heading1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #faa44f;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .header1{
+    background-color: #3498db;
+    text-align: center;
+  }
+
+
 .login {
     width: 400px;
     background: #fff;
-    border: 1px solid #dddfe2;
+    border: 1px solid #9a233f;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     border-radius: 8px;
     padding: 1rem;
@@ -19,7 +39,7 @@
     border-radius: 8px;
     border: 2px solid #dddfe2;
     outline: none;
-    color: #1d2129;
+    color: #1d2920;
     margin: 0.5rem 0;
     padding: 0.5rem 0.75rem;
     width: 92%;
@@ -37,3 +57,7 @@
     outline: none;
     cursor: pointer;
 }
+.login > .button :hover {
+    color: #2ecc71;
+    transform: scale(1.05);
+  }
