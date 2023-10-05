@@ -26,15 +26,36 @@ connectToDatabase();
 
 // Define a schema for questions
 const questionSchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User", // Reference to the User model
-  },
   questionText: String,
+  answers: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Answer", // Reference to the User model
+  },
+  User: Object,
 });
 
 // Create a model for questions
 const Question = mongoose.model("Question", questionSchema);
+
+
+//AnswerSchema
+const AnswerSchema = new mongoose.Schema({
+  answer: String,
+  questionId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Question",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  User: Object,
+});
+
+const Answer = mongoose.model("Answer",AnswerSchema);
+
+
+
 
 // Define the user schema
 const userSchema = new mongoose.Schema({
@@ -46,6 +67,7 @@ const userSchema = new mongoose.Schema({
     ref: "Question", // Reference to the Question model
   }],
 });
+
 
 // Create a model for users
 const User = mongoose.model("User", userSchema);
