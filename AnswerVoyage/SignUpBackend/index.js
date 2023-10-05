@@ -26,12 +26,10 @@ connectToDatabase();
 
 // Define a schema for questions
 const questionSchema = new mongoose.Schema({
-  questionText: String,
-  answers: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Answer", // Reference to the User model
-  },
-  User: Object,
+  questionText: {
+    type: String ,
+    required :true
+  }
 });
 
 // Create a model for questions
@@ -47,7 +45,7 @@ const AnswerSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
   User: Object,
 });
@@ -72,6 +70,7 @@ const userSchema = new mongoose.Schema({
 // Create a model for users
 const User = mongoose.model("User", userSchema);
 
+//api endpoint for Login
 app.post("/login", async (req, res) => {
   // ... your existing login route
   try {
@@ -93,6 +92,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
+// api endpoint for register
 app.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -111,6 +111,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
+//api endpoint for Question
 app.post("/PostQuestion", async (req, res) => {
   try {
     const { text } = req.body;
@@ -132,6 +133,20 @@ app.post("/PostQuestion", async (req, res) => {
       res.status(500).json({ message: 'Server Error' });
     }
 });
+
+// Getting Questions in the frontend
+app.get("/Questions", async(req,res) => {
+  try {
+
+    const allData = await Question.find({})
+
+    res.json(allData)
+
+
+  } catch (error) {
+    res.json("fail")
+  }
+})
 
 
 app.listen(port, () => {
