@@ -1,5 +1,13 @@
 
+.parent-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+  }
+  
 .register {
+    
     width: 400px;
     background: #fff;
     border: 1px solid #dddfe2;
