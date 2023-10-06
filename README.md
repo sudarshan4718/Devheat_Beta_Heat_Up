@@ -77,15 +77,15 @@ http://localhost:3000/
  <br>
    We Added Navigation bar. In which, We have provided contacts, Sign in, Questions, Logout Features.<br>
  <br><br>
- ![](AnswerVoyage/signuppage/pro5.png)
--This is our Contacts Page
+ We added Contacts in Navbar, which gives the contacts of the developers.
 <br><br>
-![](AnswerVoyage/signuppage/pro6.png) <br>
-This is our Question Display Page.<br><br>
- ![](AnswerVoyage/signuppage/pro9.png)<br>
-This is our Ask Questions page. In which you can ask your Questions.
+We have added button to navigate to post-question, which takes us to the page, in which we can post our Questions.
+<br><br> ` Please note : I have added pictures of my websites in AnswerVoyage/signuppage `
+<br> <br>
 
-   
+We have taken Question data from backend , and brought it to Frontend page, in which you can see every Questions which were asked.
+<br>
+<br>   
 
   
 # Backend
@@ -123,3 +123,11 @@ There are some features that can be added in the future:
   ```sh
   https://drive.google.com/file/d/1Bll8BIiiPSzD507kcESIFCt3U9EN6Nxy/view?usp=sharing
   ```
+ # Team Members
+ Sudarshan Jha (UI22CS30)
+ Vikesh Kumar (UI22EC85) 
+ Sunny Pritam (UI22EC76)
+
+ # MENTORS
+ Preet Khatri
+ Praharsh Sharma
