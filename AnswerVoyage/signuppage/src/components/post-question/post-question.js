@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
 import "./post-question.css"
+import { NavLink} from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
 
 
-function PostQuestion() {
+function PostQuestion({ setLoginUser }) {
   const [questionText, setQuestionText] = useState('');
   const [message, setMessage] = useState("");
 
@@ -39,7 +40,25 @@ function PostQuestion() {
 
 
   return (
+    <div>
+      <header>
+        <h1 className="header1">AnswerVoyage
+        </h1>
+        </header>
+
+   <nav className="navbar">
+      
+      <ul className="navbar-list">
+        <li><a href="/homepage">Home</a></li>
+        <li><NavLink to="/contacts">Contacts</NavLink></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/logout" onClick={() => setLoginUser({}) }>Logout</a></li>
+        <li><a href="/Questions">Questions</a></li>
+      </ul>
+    </nav>
+
     <div className="post-question">
+      
       <h2>Post a Question</h2>
       <textarea
         value={questionText}
@@ -48,6 +67,7 @@ function PostQuestion() {
         rows="4"
       ></textarea>
       <button onClick={handleQuestionSubmit}>Post</button>
+    </div>
     </div>
   );
 }
