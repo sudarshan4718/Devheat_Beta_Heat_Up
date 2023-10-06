@@ -124,10 +124,10 @@ There are some features that can be added in the future:
   https://drive.google.com/file/d/1Bll8BIiiPSzD507kcESIFCt3U9EN6Nxy/view?usp=sharing
   ```
  # Team Members
- Sudarshan Jha (UI22CS30)
- Vikesh Kumar (UI22EC85) 
- Sunny Pritam (UI22EC76)
+- Sudarshan Jha (UI22CS30)
+- Vikesh Kumar (UI22EC85) 
+- Sunny Pritam (UI22EC76)
 
  # MENTORS
- Preet Khatri
- Praharsh Sharma
+- Preet Khatri
+- Praharsh Sharma
