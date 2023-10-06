@@ -20,16 +20,68 @@
     transition: color 0.3s, transform 0.3s;
   }
   
-  /* Hover effect */
+  
   .heading1:hover {
     color: #2ecc71;
     transform: scale(1.05);
   }
   
-  /* Style for unordered list */
+  .navbar {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-list li {
+    margin-right: 20px;
+  }
+  
+  .navbar-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-list a:hover {
+    color: #007bff;
+  }
+  
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-list {
+      margin-top: 10px;
+    }
+  
+    .navbar-list li {
+      margin: 5px 0;
+    }
+  }
+  /* Style for ordered list */
 ol {
-    list-style-type: decimal; 
-    padding-left: 20px; 
+    list-style-type:decimal; 
+    padding-left: 20px;
   }
   
   /* Style for list items */
@@ -60,4 +112,8 @@ ol {
     text-align: center;
   }
 
-  
+  /* Reset some default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
