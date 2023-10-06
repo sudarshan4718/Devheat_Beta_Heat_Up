@@ -76,12 +76,12 @@ http://localhost:3000/
  ![](AnswerVoyage/signuppage/pro4.png)
  <br>
    We Added Navigation bar. In which, We have provided contacts, Sign in, Questions, Logout Features.<br>
-![Contacts](AnswerVoyage/signuppage/pro5.png) <br>
+ <br>
 -This is our Contacts Page
 <br><br>
-![Questions](AnswerVoyage/signuppage/pro6.png)<br>
+<br>
 This is our Question Display Page.<br><br>
-![Ask](AnswerVoyage/signuppage/pro9.png) <br>
+ <br>
 This is our Ask Questions page. In which you can ask your Questions.
 
    
