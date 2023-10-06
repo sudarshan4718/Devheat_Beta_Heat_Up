@@ -79,9 +79,9 @@ http://localhost:3000/
   ![](AnswerVoyage/signuppage/pro5.png)<br>
 -This is our Contacts Page
 <br><br>
-![](AnswerVoyage/signuppage/pro5.png)<br>
-This is our Question Display Page.<br><br>
 ![](AnswerVoyage/signuppage/pro6.png)<br>
+This is our Question Display Page.<br><br>
+![](AnswerVoyage/signuppage/pro9.png)<br>
 This is our Ask Questions page. In which you can ask your Questions.
 
    
@@ -103,7 +103,8 @@ This App Uses Some Node_Modules in order to work properly which include:
 # Database
 
 We are using `MongoDB` for all its database needs. This App uses DB to:
- 
+ ![](AnswerVoyage/signuppage/pro7.png)<br>
+ ![](AnswerVoyage/signuppage/pro8.png)<br>
  - Store information regarding the user.
  - Stores the password of the user. 
  - Stores the Question Asked by the user
